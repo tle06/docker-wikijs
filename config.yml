@@ -185,3 +185,5 @@ theme:
   code:
     dark: ${W_THEME_CODE_ENABLE:-true}
     colorize: ${W_THEME_COLORIZE_ENABLE:-true}
+
+#
