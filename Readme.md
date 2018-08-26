@@ -1,7 +1,5 @@
 
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE)
-
-[![Docker HUB](https://img.shields.io/docker/pulls/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE) [![Docker HUB](https://img.shields.io/docker/pulls/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/) [![](https://images.microbadger.com/badges/image/tlnk/docker-wikijs.svg)](https://microbadger.com/images/tlnk/docker-wikijs "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/tlnk/docker-wikijs.svg)](https://microbadger.com/images/tlnk/docker-wikijs "Get your own version badge on microbadger.com")
 
 #Wiki
 
