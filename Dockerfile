@@ -1,12 +1,27 @@
+#Dockerfile docker-wikijs
 FROM requarks/wiki:latest
+LABEL maintainer="tlnk.fr"
 
-# Replace with your email address:
-ENV WIKI_ADMIN_EMAIL admin@example.com
+ARG VERSION
+ARG BUILD_DATE
+ARG VCS_REF
+
+EXPOSE 80
 
 WORKDIR /var/wiki
-
-# Replace your-config.yml with the path to your config file:
 ADD config.yml config.yml
 
-EXPOSE 3000
-ENTRYPOINT [ "node", "server" ]
+RUN apk update && \
+    apk add nano --no-cache
+
+ENTRYPOINT ["/bin/bash", "/entrypoint/entrypoint.sh"]
+CMD ["node", "server"]
+
+
+LABEL org.label-schema.version=$VERSION
+LABEL org.label-schema.build-date=$BUILD_DATE
+LABEL org.label-schema.vcs-ref=$VCS_REF
+LABEL org.label-schema.vcs-url="https://github.com/tle06/docker-wikijs.git"
+LABEL org.label-schema.name="docker-wikijs"
+LABEL org.label-schema.vendor="docker-wikijs"
+LABEL org.label-schema.schema-version="1.0"

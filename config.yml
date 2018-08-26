@@ -9,149 +9,149 @@
 # Title of this site
 # ---------------------------------------------------------------------
 
-title: Wiki
+title: ${W_TITLE:-Wiki}
 
 # ---------------------------------------------------------------------
 # Full public path to the site, without the trailing slash
 # ---------------------------------------------------------------------
 # INCLUDE CLIENT PORT IF NOT 80/443!
 
-host: http://localhost
+host: ${W_HOST:-http://localhost}
 
 # ---------------------------------------------------------------------
 # Port the main server should listen to (80 by default)
 # ---------------------------------------------------------------------
 # To use process.env.PORT, comment the line below:
 
-port: 80
+port: ${W_PORT:-80}
 
 # ---------------------------------------------------------------------
 # Data Directories
 # ---------------------------------------------------------------------
 
 paths:
-  repo: ./repo
-  data: ./data
+  repo: ${W_REPO_PATH:-./repo}
+  data: ${W_DATA_PATH:-./data}
 
 # ---------------------------------------------------------------------
 # Upload Limits
 # ---------------------------------------------------------------------
-# In megabytes (MB)
+# In megabytes (MB}
 
 uploads:
-  maxImageFileSize: 3
-  maxOtherFileSize: 100
+  maxImageFileSize: ${W_MAX_IMAGE_FILE_SIZE:-3}
+  maxOtherFileSize: ${W_MAX_OTHER_FILE_SIZE:-100}
 
 # ---------------------------------------------------------------------
 # Site Language
 # ---------------------------------------------------------------------
 # Possible values: en, de, es, fa, fr, ja, ko, nl, pt, ru, sr, sv, tr or zh
 
-lang: en
+lang: ${W_LANG:-en}
 
 # Enable for right to left languages (e.g. arabic):
-langRtl: false
+langRtl: ${W_LANG_RTL:-false}
 
 # ---------------------------------------------------------------------
 # Site Authentication
 # ---------------------------------------------------------------------
 
-public: false
+public: ${W_PUBLIC_ACCESS:-false}
 
 auth:
-  defaultReadAccess: false
+  defaultReadAccess: ${W_AUTH_DEFAULT_READ_ACCESS:-false}
   local:
-    enabled: true
+    enabled: ${W_AUTH_LOCAL:-true}
   google:
-    enabled: true
-    clientId: GOOGLE_CLIENT_ID
-    clientSecret: GOOGLE_CLIENT_SECRET
+    enabled: ${W_AUTH_GOOGLE:-false}
+    clientId: ${W_AUTH_GG_CLIENT_ID}
+    clientSecret: ${W_AUTH_GG_CLIENT_SECRET}
   microsoft:
-    enabled: true
-    clientId: MS_APP_ID
-    clientSecret: MS_APP_SECRET
+    enabled: ${W_AUTH_MICROSOFT:-false}
+    clientId: ${W_AUTH_MS_CLIENT_ID}
+    clientSecret: ${W_AUTH_MS_CLIENT_SECRET}
   facebook:
-    enabled: false
-    clientId: FACEBOOK_APP_ID
-    clientSecret: FACEBOOK_APP_SECRET
+    enabled: ${W_AUTH_FACEBOOK:-false}
+    clientId: ${W_AUTH_FB_CLIENT_ID}
+    clientSecret: ${W_AUTH_FB_CLIENT_SECRET}
   github:
-    enabled: false
-    clientId: GITHUB_CLIENT_ID
-    clientSecret: GITHUB_CLIENT_SECRET
+    enabled: ${W_AUTH_GITHUB:-false}
+    clientId: ${W_AUTH_GH_CLIENT_ID}
+    clientSecret: ${W_AUTH_GH_CLIENT_SECRET}
   slack:
-    enabled: false
-    clientId: 'SLACK_CLIENT_ID'
-    clientSecret: 'SLACK_CLIENT_SECRET'
+    enabled: ${W_AUTH_SLACK:-false}
+    clientId: ${W_AUTH_SK_CLIENT_ID}
+    clientSecret: ${W_AUTH_CLIENT_SECRET}
   ldap:
-    enabled: false
-    url: ldap://serverhost:389
-    bindDn: cn='root'
-    bindCredentials: BIND_PASSWORD
-    searchBase: o=users,o=example.com
-    searchFilter: (uid={{username}})
-    tlsEnabled: false
-    tlsCertPath: C:\example\root_ca_cert.crt
+    enabled: ${W_AUTH_LDAP:-false}
+    url: ${W_AUTH_LDAP_URL}
+    bindDn: ${W_AUTH_LDAP_BIND_DN}
+    bindCredentials: ${W_AUTH_LDAP_BIND_CREDENTIALS}
+    searchBase: ${W_AUTH_LDAP_SEARCH_BASE}
+    searchFilter: ${W_AUTH_LDAP_SEARCH_FILTER}
+    tlsEnabled: ${W_AUTH_LDAP_TLS_ENABLE}
+    tlsCertPath: ${W_AUTH_LDAP_TLS_CERT_PATH}
   azure:
-    enabled: false
-    clientId: APP_ID
-    clientSecret: APP_SECRET_KEY
-    resource: '00000002-0000-0000-c000-000000000000'
-    tenant: 'YOUR_TENANT.onmicrosoft.com'
+    enabled: ${W_AUTH_AZURE:-false}
+    clientId: ${W_AUTH_AZ_CLIENT_ID}
+    clientSecret: ${W_AUTH_AZ_CLIENT_SECRET}
+    resource: ${W_AUTH_AZ_RESOURCE}
+    tenant: ${W_AUTH_AZ_TENANT}
   oauth2:
-    enabled: false
-    clientId: OAUTH2_CLIENT_ID
-    clientSecret: OAUTH2_CLIENT_SECRET
-    authorizationURL: OAUTH2_AUTH_URL
-    tokenURL: OAUTH2_TOKEN_URL
+    enabled: ${W_AUTH_OAUTH2:-false}
+    clientId: ${W_AUTH_OH_CLIENT_ID}
+    clientSecret: ${W_AUTH_OH_CLIENT_SECRET}
+    authorizationURL: ${W_AUTH_OH_AUTHORIZATION_URL}
+    tokenURL: ${W_AUTH_OH_TOKEN_URL}
   oidc:
-    enabled: false
-    clientId: OPENID_CONNECT_CLIENT_ID
-    clientSecret: OPENID_CONNECT_CLIENT_SECRET
-    issuer: OPENID_CONNECT_ISSUER
-    userInfoUrl: OPENID_CONNECT_USER_INFO_URL
-    authorizationURL: OPENID_CONNECT_AUTHORIZATION_URL
-    tokenURL: OPENID_CONNECT_TOKEN_URL
-    emailClaim: OPENID_CONNECT_EMAIL_CLAIM_PATH
-    usernameClaim: OPENID_CONNECT_USERNAME_CLAIM_PATH
+    enabled: ${W_AUTH_OIDC:-false}
+    clientId: ${W_AUTH_OC_CLIENT_ID}
+    clientSecret: ${W_AUTH_OC_CLIENT_SECRET}
+    issuer: ${W_AUTH_OC_ISSUER}
+    userInfoUrl: ${W_AUTH_OC_USER_INFO_URL}
+    authorizationURL: ${W_AUTH_OC_AUTHORIZATION_URL}
+    tokenURL: ${W_AUTH_OC_TOKEN_URL
+    emailClaim: ${W_AUTH_OC_EMAIL_CLAIM}
+    usernameClaim: ${W_AUTH_OC_USERNAME_CLAIM}
 # ---------------------------------------------------------------------
 # Secret key to use when encrypting sessions
 # ---------------------------------------------------------------------
 # Use a long and unique random string (256-bit keys are perfect!)
 
-sessionSecret: 1234567890abcdefghijklmnopqrstuvxyz
+sessionSecret: ${W_SESSION_SECRET:-1234567890abcdefghijklmnopqrstuvxyz}
 
 # ---------------------------------------------------------------------
 # Database Connection String
 # ---------------------------------------------------------------------
 
-db: mongodb://localhost:27017/wiki
+db: ${W_DB_CONNECTION_STRING:-mongodb://localhost:27017/wiki}
 
 # ---------------------------------------------------------------------
 # Git Connection Info
 # ---------------------------------------------------------------------
 
-git:
-  url: https://github.com/Organization/Repo
-  branch: master
+git: ${W_GIT_ENABLE:-false}
+  url: ${W_GH_URL}
+  branch: ${W_GH_BRANCH}
   auth:
 
     # Type: basic or ssh
-    type: ssh
+    type: ${W_GH_AUTH_TYPE:-ssh}
 
     # Only for Basic authentication:
-    username: marty
-    password: MartyMcFly88
+    username: ${W_GH_USERNAME}
+    password: ${W_GH_PASSWORD}
 
     # Only for SSH authentication:
-    privateKey: /etc/wiki/keys/git.pem
+    privateKey: ${W_GH_PRIVATE_KEY_PATH}
 
-    sslVerify: true
+    sslVerify: ${W_GH_SSL_VERIFY:-true}
 
   # Default email to use as commit author
-  serverEmail: marty@example.com
+  serverEmail: ${W_GH_SERVER_EMAIL}
 
   # Whether to use user email as author in commits
-  showUserEmail: true
+  showUserEmail: ${W_GH_SHOW_USER_EMAIL:-true}
 
 # ---------------------------------------------------------------------
 # Features
@@ -159,29 +159,29 @@ git:
 # You can enable / disable specific features below
 
 features:
-  linebreaks: true
-  mathjax: true
+  linebreaks: ${W_FT_LINE_BREAKS:-true}
+  mathjax: ${W_FT_MATHJAX:-true}
 
 # ---------------------------------------------------------------------
 # External Logging
 # ---------------------------------------------------------------------
 
 externalLogging:
-  bugsnag: false
-  loggly: false
-  papertrail: false
-  rollbar: false
-  sentry: false
+  bugsnag: ${W_EL_BUGSNAG_ENABLE:-false}
+  loggly: ${W_EL_LOGGLY_ENABLE:-false}
+  papertrail: ${W_EL_PAPERTRAIL_ENABLE:-false}
+  rollbar: ${W_EL_ROLLBAR_ENABLE:-false}
+  sentry: ${W_EL_SENTRY_ENABLE:-false}
 
 # ---------------------------------------------------------------------
 # Color Theme
 # ---------------------------------------------------------------------
 
 theme:
-  primary: indigo
-  alt: blue-grey
-  viewSource: all # all | write | false
-  footer: blue-grey
+  primary: ${W_THEME_PRIMARY:-indigo}
+  alt: ${W_THEME_ALT:-blue-grey}
+  viewSource: ${W_THEME_VIEWSOURCE:-all}
+  footer: ${W_THEME_FOOTER:-blue-grey}
   code:
-    dark: true
-    colorize: true
+    dark: ${W_THEME_CODE_ENABLE:-true}
+    colorize: ${W_THEME_COLORIZE_ENABLE:-true}
