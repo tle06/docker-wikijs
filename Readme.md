@@ -1,3 +1,7 @@
+
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE)
+
+
 #Wiki
 
 
