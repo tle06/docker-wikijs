@@ -131,24 +131,24 @@ db: ${W_DB_CONNECTION_STRING:-mongodb://localhost:27017/wiki}
 # ---------------------------------------------------------------------
 
 git: ${W_GIT_ENABLE:-false}
-  url: ${W_GH_URL}
-  branch: ${W_GH_BRANCH}
+  url: ${W_GH_URL:-https://github.com/Organization/Repo}
+  branch: ${W_GH_BRANCH:-master}
   auth:
 
     # Type: basic or ssh
     type: ${W_GH_AUTH_TYPE:-ssh}
 
     # Only for Basic authentication:
-    username: ${W_GH_USERNAME}
-    password: ${W_GH_PASSWORD}
+    username: ${W_GH_USERNAME:-marty}
+    password: ${W_GH_PASSWORD:-MartyMcFly88}
 
     # Only for SSH authentication:
-    privateKey: ${W_GH_PRIVATE_KEY_PATH}
+    privateKey: ${W_GH_PRIVATE_KEY_PATH:-/etc/wiki/keys/git.pem}
 
     sslVerify: ${W_GH_SSL_VERIFY:-true}
 
   # Default email to use as commit author
-  serverEmail: ${W_GH_SERVER_EMAIL}
+  serverEmail: ${W_GH_SERVER_EMAIL:-marty@example.com}
 
   # Whether to use user email as author in commits
   showUserEmail: ${W_GH_SHOW_USER_EMAIL:-true}
