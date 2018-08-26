@@ -38,6 +38,8 @@ Build from [requarks/wiki:latest](https://github.com/Requarks/wiki/blob/master/t
 
 
 # Available ENV variable
+All environment variable are base on the config file available [here](https://github.com/Requarks/wiki/blob/master/config.sample.yml)
+
 ## Rancher compatible ENV variable with current default value
 
 WIKI_ADMIN_EMAIL=admin@example.com
