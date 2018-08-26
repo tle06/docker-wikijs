@@ -9,10 +9,13 @@ ARG VCS_REF
 EXPOSE 80
 
 WORKDIR /var/wiki
-ADD config.yml config.yml
+COPY entrypoint /entrypoint
+COPY config.yml config.yml
 
 RUN apk update && \
-    apk add nano --no-cache
+    apk add nano --no-cache && \
+    chmod +x /entrypoint/*sh && \
+    chmod +x /entrypoint/entrypoint.d/*.sh
 
 ENTRYPOINT ["/bin/bash", "/entrypoint/entrypoint.sh"]
 CMD ["node", "server"]
