@@ -1,9 +1,46 @@
 
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE) [![Docker HUB](https://img.shields.io/docker/pulls/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/) [![](https://images.microbadger.com/badges/image/tlnk/docker-wikijs.svg)](https://microbadger.com/images/tlnk/docker-wikijs "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/tlnk/docker-wikijs.svg)](https://microbadger.com/images/tlnk/docker-wikijs "Get your own version badge on microbadger.com")
 
-#Wiki
+# Wiki.js
+
+![logo](https://beta.requarks.io/svg/logo.svg)
+
+# Supported tags and respective
+
+* latest [Dockerfile](https://github.com/tle06/docker-wikijs/blob/master/Dockerfile)
+
+This image is updated via pull requests to the tle06/docker-wikijs GitHub repo.
+
+An open source, modern and powerful wiki app built on Node.js, Git and Markdown.
+
+- **[Official Website](https://wiki.js.org/)**
+- **[Getting Started](https://wiki.js.org/get-started.html)**
+- **[Documentation](https://docs.requarks.io/wiki)**
+- [Requirements](#requirements)
+- [Demo](#demo)
+- [Change Log](https://github.com/Requarks/wiki/blob/master/CHANGELOG.md)
+- [Feature Requests](https://requests.requarks.io/wiki)
+- [Milestones](#milestones)
+
+# Image configuration
+Build from [requarks/wiki:latest](https://github.com/Requarks/wiki/blob/master/tools/Dockerfile)
+
+* node
+* nano
+* git
+* curl
+* bash
+* openssh
+* supervisor
+
+* port 80
+* workdir = /var/wiki
 
 
+# Available ENV variable
+## Rancher compatible ENV variable with current default value
+
+WIKI_ADMIN_EMAIL=admin@example.com
 W_TITLE= Wiki
 W_HOST=http://localhost 
 W_PORT=80
@@ -80,3 +117,57 @@ W_THEME_VIEWSOURCE=all
 W_THEME_FOOTER=blue-grey 
 W_THEME_CODE_ENABLE=true
 W_THEME_COLORIZE_ENABLE=true
+
+## Docker compose compatible ENV variable with current default value
+
+# How to use this image
+## Start docker-wikijs
+
+Starting the wikijs instance listening on port 80 is as easy as the following:
+``` Docker
+
+$ docker run -d -p 27107:27107 mongo -name wiki-db
+$ docker run -d -p 80:80 tlnk/docker-wikijs -link wiki-dc:db
+
+```
+Then go to http://localhost/ and go through the wizard. The default password is __admin123__
+
+## Use docker compose
+
+``` Docker
+version: '2'
+services:
+  wiki:
+    image: tlnk/docker-wikijs
+    environment:
+      WIKI_ADMIN_EMAIL=admin@example.com
+    volumes:
+    - /wiki/data:/var/wiki/data
+    - /wiki/repo:/var/wiki/repo
+    links:
+    - wiki-db:db
+    ports:
+    - 80:80/tcp
+    labels:
+  wiki-db:
+    image: mongo
+    volumes:
+    - /wiki/db:/data/db
+    ports:
+    - 27017:27017/tcp
+    command:
+    - --smallfiles
+    - --bind_ip
+    - wiki-db
+    labels:
+
+```
+## Persistent data
+All data are stored inside the mogo db. Following folder still need to be mapped:
+
+* -v /<mydatalocation>:/var/wiki/data
+* -v /<mydatalocation>:/var/wiki/repo
+
+# Rancher template
+An rancher template is also available [here](https://github.com/tle06/rancher-catalog.git)
+
