@@ -418,6 +418,19 @@ All data are stored inside the mogo db. Following folder still need to be mapped
 * -v /<mydatalocation>:/var/wiki/data
 * -v /<mydatalocation>:/var/wiki/repo
 
+#Active directory setup
+
+Enable the following env variables:
+
+W_AUTH_LDAP=true
+W_AUTH_LDAP_URL=ldap://ldap.domain.example:389
+W_AUTH_LDAP_BIND_DN=cn=Service LDAP,ou=Service Account,ou=Management,dc=domain,dc=example
+W_AUTH_LDAP_BIND_CREDENTIALS=Fod4@X9gwm!V
+W_AUTH_LDAP_SEARCH_BASE=ou=User,ou=Management,dc=domain,dc=example
+W_AUTH_LDAP_SEARCH_FILTER=(userPrincipalName={{username}})
+W_AUTH_LDAP_TLS_ENABLE=false
+W_AUTH_LDAP_TLS_CERT_PATH=C:\example\root_ca_cert.crt
+
 # Rancher template
 An rancher template is also available [here](https://github.com/tle06/rancher-catalog.git)
 
