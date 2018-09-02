@@ -43,7 +43,7 @@ All environment variable are base on the config file available [here](https://gi
 ## Rancher compatible ENV variable with current default value
 
 WIKI_ADMIN_EMAIL=admin@example.com
-W_TITLE= Wiki
+W_TITLE=Wiki
 W_HOST=http://localhost 
 W_PORT=80
 W_REPO_PATH=./repo 
@@ -123,7 +123,7 @@ W_THEME_COLORIZE_ENABLE=true
 ## Docker compose compatible ENV variable with current default value
 
 -e WIKI_ADMIN_EMAIL=admin@example.com \
--e W_TITLE= Wiki \
+-e W_TITLE=Wiki \
 -e W_HOST=http://localhost \
 -e W_PORT=80 \
 -e W_REPO_PATH=./repo \
@@ -208,9 +208,9 @@ Starting the wikijs instance listening on port 80 is as easy as the following:
 ``` Docker
 
 $ docker run -d -p 27107:27107 mongo -name wiki-db
-$ docker run -d -p 80:80 \
+$ docker run -d --restart=unless-stopped -p 80:80 \
 -e WIKI_ADMIN_EMAIL=admin@example.com \
--e W_TITLE= Wiki \
+-e W_TITLE=Wiki \
 -e W_HOST=http://localhost \
 -e W_PORT=80 \
 -e W_REPO_PATH=./repo \
@@ -272,7 +272,8 @@ $ docker run -d -p 80:80 \
 -e W_GH_PASSWORD= \
 -e W_GH_SSL_VERIFY=true \
 -e W_GH_SERVER_EMAIL= \
--e W_GH_SHO-e W_USER_EMAIL=true \
+-e W_GH_SHOW_USER_EMAIL=true \
+-e W_USER_EMAIL=true \
 -e W_FT_LINE_BREAKS=true \
 -e W_FT_MATHJAX=true \
 -e W_EL_BUGSNAG_ENABLE=false \
