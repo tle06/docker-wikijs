@@ -418,7 +418,7 @@ All data are stored inside the mogo db. Following folder still need to be mapped
 * -v /<mydatalocation>:/var/wiki/data
 * -v /<mydatalocation>:/var/wiki/repo
 
-#Active directory setup
+# Active directory setup
 
 Enable the following env variables:
 
