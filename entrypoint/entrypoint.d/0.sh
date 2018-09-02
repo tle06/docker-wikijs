@@ -321,6 +321,3 @@ theme:
 echo "Wiki.js config completed"
 fi
 
-#debug
-cat $file
-
