@@ -94,7 +94,7 @@ fi
 #Get if config applied
 
 if [ -f "$file" ]; then
-    echo "/var/wiki/config.yml already exist. Upgrade to replace it"
+    echo "$file already exist. Upgrade to replace it"
 else
 
     #Create config file
@@ -102,7 +102,7 @@ else
     mkdir -p "$(dirname "$file")" && touch "$file"
     
     #Write configuration
-    echo "Writing configuration into /var/wiki/config.yml"
+    echo "Writing configuration into $file"
 
     echo "
     #######################################################################
@@ -238,7 +238,7 @@ else
     # Git Connection Info
     # ---------------------------------------------------------------------
 
-    git: ${VAR_GIT_ENABLE}" > /var/wiki/config.yml
+    git: ${VAR_GIT_ENABLE}" > $file
 
     if [ "${VAR_GIT_ENABLE}" = true ]; then
     echo "GIT_ENABLE = true"
@@ -265,7 +265,7 @@ else
     serverEmail: ${VAR_GH_SERVER_EMAIL:-marty@example.com}
 
     # Whether to use user email as author in commits
-    showUserEmail: ${VAR_GH_SHOVAR_USER_EMAIL}" >> /var/wiki/config.yml
+    showUserEmail: ${VAR_GH_SHOVAR_USER_EMAIL}" >> $file
 
 
     else
@@ -311,7 +311,7 @@ else
         dark: ${VAR_THEME_CODE_ENABLE}
         colorize: ${VAR_THEME_COLORIZE_ENABLE}
 
-    #" >> /var/wiki/config.yml
+    #" >> $file
 
 
     echo "Wiki.js config completed"
