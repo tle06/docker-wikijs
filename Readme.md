@@ -43,7 +43,7 @@ Build from [requarks/wiki:latest](https://github.com/Requarks/wiki/blob/master/t
 # Available ENV variable
 All environment variable are base on the config file available [here](https://github.com/Requarks/wiki/blob/master/config.sample.yml)
 
-## Rancher compatible ENV variable with current default value
+## Rancher ENV variable
 
 WIKI_ADMIN_EMAIL=admin@example.com
 W_TITLE=Wiki
@@ -123,13 +123,7 @@ W_THEME_FOOTER=blue-grey
 W_THEME_CODE_ENABLE=true
 W_THEME_COLORIZE_ENABLE=true
 
-### Following will enable to use a custom config file and location
-
-USE_CUSTOM_CONFIG_FILE=false
-CUSTOM_CONFIG_FILE_LOCATION=/var/wiki/config/config.yml
-
-
-## Docker compose compatible ENV variable with current default value
+## Docker compose ENV variable
 
 -e WIKI_ADMIN_EMAIL=admin@example.com \
 -e W_TITLE=Wiki \
@@ -210,6 +204,13 @@ CUSTOM_CONFIG_FILE_LOCATION=/var/wiki/config/config.yml
 -e W_THEME_CODE_ENABLE=true \
 -e W_THEME_COLORIZE_ENABLE=true \
 
+
+### Custom config file location
+
+USE_CUSTOM_CONFIG_FILE=false
+CUSTOM_CONFIG_FILE_LOCATION=/var/wiki/config/config.yml
+
+An symbolic link will be create from __CUSTOM_CONFIG_FILE_LOCATION__ to __/var/wiki/config.yml__
 
 # How to use this image
 ## Start docker-wikijs
