@@ -170,7 +170,7 @@ else
     public: ${VAR_PUBLIC_ACCESS}
 
     auth:
-    defaultReadAccess: ${VAR_AUTH_DEFAULT_READ_ACCESS}
+        defaultReadAccess: ${VAR_AUTH_DEFAULT_READ_ACCESS}
     local:
         enabled: ${VAR_AUTH_LOCAL}
     google:
