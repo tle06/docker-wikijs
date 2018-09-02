@@ -101,7 +101,7 @@ else
     echo "Create $file"
     mkdir -p "$(dirname "$file")" && touch "$file"
 
-    if [ "$(dirname "$file")" ! "/var/wiki" ]; then
+    if [ "$(dirname "$file")" != "/var/wiki" ]; then
         ln -sf "$file" /var/wiki/config.yml
     fi
 
