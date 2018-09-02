@@ -101,7 +101,7 @@ else
     echo "Create $file"
     mkdir -p "$(dirname "$file")" && touch "$file"
 
-    if [! "$(dirname "$file")" == "/var/wiki"]; then
+    if [! "$(dirname "$file")" == "/var/wiki" ]; then
         ln -sf "$file" /var/wiki/config.yml
     fi
 
@@ -114,7 +114,7 @@ else
     #######################################################################
     # Full explanation + examples in the documentation:
     # https://docs.requarks.io/wiki/install
-    # You can use an ENV variable by using $(ENV_VAR_NAME) as the value
+    # You can use an ENV variable by using \$(ENV_VAR_NAME) as the value
 
     # ---------------------------------------------------------------------
     # Title of this site
@@ -321,4 +321,6 @@ else
     echo "Wiki.js config completed"
 fi
 
+#debug
+cat $file
 
