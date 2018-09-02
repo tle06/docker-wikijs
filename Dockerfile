@@ -10,7 +10,6 @@ EXPOSE 80
 
 WORKDIR /var/wiki
 COPY entrypoint /entrypoint
-COPY config.yml config.yml
 
 RUN apk update && \
     apk add nano --no-cache && \
