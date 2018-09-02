@@ -1,6 +1,8 @@
 Still in dev mod
 
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE) [![Docker HUB](https://img.shields.io/docker/pulls/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/) [![](https://images.microbadger.com/badges/image/tlnk/docker-wikijs.svg)](https://microbadger.com/images/tlnk/docker-wikijs "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/tlnk/docker-wikijs.svg)](https://microbadger.com/images/tlnk/docker-wikijs "Get your own version badge on microbadger.com")
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE) [![Docker HUB](https://img.shields.io/docker/pulls/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/) [![MicroBadger Layers](https://img.shields.io/microbadger/layers/tlnk/docker-wikijs.svg?style=flat-square)](https://microbadger.com/images/tlnk/docker-wikijs) [![MicroBadger Image Size](https://img.shields.io/microbadger/image-size/tlnk/docker-wikijs.svg?style=flat-square)](https://microbadger.com/images/tlnk/docker-wikijs) [![Docker Build Status](https://img.shields.io/docker/build/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/builds/)
+
+
 
 # Wiki.js
 
@@ -14,9 +16,9 @@ This image is updated via pull requests to the tle06/docker-wikijs GitHub repo.
 
 An open source, modern and powerful wiki app built on Node.js, Git and Markdown.
 
-- **[Official Website](https://wiki.js.org/)**
-- **[Getting Started](https://wiki.js.org/get-started.html)**
-- **[Documentation](https://docs.requarks.io/wiki)**
+- [Official Website](https://wiki.js.org/)
+- [Getting Started](https://wiki.js.org/get-started.html)
+- [Documentation](https://docs.requarks.io/wiki)
 - [Requirements](#requirements)
 - [Demo](#demo)
 - [Change Log](https://github.com/Requarks/wiki/blob/master/CHANGELOG.md)
@@ -120,6 +122,12 @@ W_THEME_VIEWSOURCE=all
 W_THEME_FOOTER=blue-grey 
 W_THEME_CODE_ENABLE=true
 W_THEME_COLORIZE_ENABLE=true
+
+### Following will enable to use a custom config file and location
+
+USE_CUSTOM_CONFIG_FILE=false
+CUSTOM_CONFIG_FILE_LOCATION=/var/wiki/config/config.yml
+
 
 ## Docker compose compatible ENV variable with current default value
 
