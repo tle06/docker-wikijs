@@ -77,7 +77,7 @@ VAR_THEME_ALT="${W_THEME_ALT:-blue-grey}"
 VAR_THEME_VIEWSOURCE="${W_THEME_VIEWSOURCE:-all}"
 VAR_THEME_FOOTER="${W_THEME_FOOTER:-blue-grey}"
 VAR_THEME_CODE_ENABLE="${W_THEME_CODE_ENABLE:-true}"
-VAR_THEME_COLORIZE_ENABLE"${W_THEME_COLORIZE_ENABLE:-true}"
+VAR_THEME_COLORIZE_ENABLE="${W_THEME_COLORIZE_ENABLE:-true}"
 VAR_USE_CUSTOM_CONFIG_FILE="${USE_CUSTOM_CONFIG_FILE:-false}"
 VAR_CUSTOM_CONFIG_FILE_LOCATION="${CUSTOM_CONFIG_FILE_LOCATION:-/var/wiki/config/config.yml}"
 
@@ -93,12 +93,12 @@ fi
 
 #Get if config applied
 
-if [ ! -f "$file" ]; then
+if [ -f "$file" ]; then
     echo "/var/wiki/config.yml already exist. Upgrade to replace it"
 else
 
     #Create config file
-    echo "Create /var/wiki/config.yml"
+    echo "Create $file"
     mkdir -p "$(dirname "$file")" && touch "$file"
     
     #Write configuration
