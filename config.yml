@@ -9,29 +9,29 @@
 # Title of this site
 # ---------------------------------------------------------------------
 
-title: ${W_TITLE:-Wiki}
+title: ${W_TITLE}
 
 # ---------------------------------------------------------------------
 # Full public path to the site, without the trailing slash
 # ---------------------------------------------------------------------
 # INCLUDE CLIENT PORT IF NOT 80/443!
 
-host: ${W_HOST:-http://localhost}
+host: ${W_HOST}
 
 # ---------------------------------------------------------------------
 # Port the main server should listen to (80 by default)
 # ---------------------------------------------------------------------
 # To use process.env.PORT, comment the line below:
 
-port: ${W_PORT:-80}
+port: ${W_PORT}
 
 # ---------------------------------------------------------------------
 # Data Directories
 # ---------------------------------------------------------------------
 
 paths:
-  repo: ${W_REPO_PATH:-./repo}
-  data: ${W_DATA_PATH:-./data}
+  repo: ${W_REPO_PATH}
+  data: ${W_DATA_PATH}
 
 # ---------------------------------------------------------------------
 # Upload Limits
@@ -39,51 +39,51 @@ paths:
 # In megabytes (MB}
 
 uploads:
-  maxImageFileSize: ${W_MAX_IMAGE_FILE_SIZE:-3}
-  maxOtherFileSize: ${W_MAX_OTHER_FILE_SIZE:-100}
+  maxImageFileSize: ${W_MAX_IMAGE_FILE_SIZE}
+  maxOtherFileSize: ${W_MAX_OTHER_FILE_SIZE}
 
 # ---------------------------------------------------------------------
 # Site Language
 # ---------------------------------------------------------------------
 # Possible values: en, de, es, fa, fr, ja, ko, nl, pt, ru, sr, sv, tr or zh
 
-lang: ${W_LANG:-en}
+lang: ${W_LANG}
 
 # Enable for right to left languages (e.g. arabic):
-langRtl: ${W_LANG_RTL:-false}
+langRtl: ${W_LANG_RTL}
 
 # ---------------------------------------------------------------------
 # Site Authentication
 # ---------------------------------------------------------------------
 
-public: ${W_PUBLIC_ACCESS:-false}
+public: ${W_PUBLIC_ACCESS}
 
 auth:
-  defaultReadAccess: ${W_AUTH_DEFAULT_READ_ACCESS:-false}
+  defaultReadAccess: ${W_AUTH_DEFAULT_READ_ACCESS}
   local:
-    enabled: ${W_AUTH_LOCAL:-true}
+    enabled: ${W_AUTH_LOCAL}
   google:
-    enabled: ${W_AUTH_GOOGLE:-false}
+    enabled: ${W_AUTH_GOOGLE}
     clientId: ${W_AUTH_GG_CLIENT_ID}
     clientSecret: ${W_AUTH_GG_CLIENT_SECRET}
   microsoft:
-    enabled: ${W_AUTH_MICROSOFT:-false}
+    enabled: ${W_AUTH_MICROSOFT}
     clientId: ${W_AUTH_MS_CLIENT_ID}
     clientSecret: ${W_AUTH_MS_CLIENT_SECRET}
   facebook:
-    enabled: ${W_AUTH_FACEBOOK:-false}
+    enabled: ${W_AUTH_FACEBOOK}
     clientId: ${W_AUTH_FB_CLIENT_ID}
     clientSecret: ${W_AUTH_FB_CLIENT_SECRET}
   github:
-    enabled: ${W_AUTH_GITHUB:-false}
+    enabled: ${W_AUTH_GITHUB}
     clientId: ${W_AUTH_GH_CLIENT_ID}
     clientSecret: ${W_AUTH_GH_CLIENT_SECRET}
   slack:
-    enabled: ${W_AUTH_SLACK:-false}
+    enabled: ${W_AUTH_SLACK}
     clientId: ${W_AUTH_SK_CLIENT_ID}
     clientSecret: ${W_AUTH_CLIENT_SECRET}
   ldap:
-    enabled: ${W_AUTH_LDAP:-false}
+    enabled: ${W_AUTH_LDAP}
     url: ${W_AUTH_LDAP_URL}
     bindDn: ${W_AUTH_LDAP_BIND_DN}
     bindCredentials: ${W_AUTH_LDAP_BIND_CREDENTIALS}
@@ -92,19 +92,19 @@ auth:
     tlsEnabled: ${W_AUTH_LDAP_TLS_ENABLE}
     tlsCertPath: ${W_AUTH_LDAP_TLS_CERT_PATH}
   azure:
-    enabled: ${W_AUTH_AZURE:-false}
+    enabled: ${W_AUTH_AZURE}
     clientId: ${W_AUTH_AZ_CLIENT_ID}
     clientSecret: ${W_AUTH_AZ_CLIENT_SECRET}
     resource: ${W_AUTH_AZ_RESOURCE}
     tenant: ${W_AUTH_AZ_TENANT}
   oauth2:
-    enabled: ${W_AUTH_OAUTH2:-false}
+    enabled: ${W_AUTH_OAUTH2}
     clientId: ${W_AUTH_OH_CLIENT_ID}
     clientSecret: ${W_AUTH_OH_CLIENT_SECRET}
     authorizationURL: ${W_AUTH_OH_AUTHORIZATION_URL}
     tokenURL: ${W_AUTH_OH_TOKEN_URL}
   oidc:
-    enabled: ${W_AUTH_OIDC:-false}
+    enabled: ${W_AUTH_OIDC}
     clientId: ${W_AUTH_OC_CLIENT_ID}
     clientSecret: ${W_AUTH_OC_CLIENT_SECRET}
     issuer: ${W_AUTH_OC_ISSUER}
@@ -118,19 +118,19 @@ auth:
 # ---------------------------------------------------------------------
 # Use a long and unique random string (256-bit keys are perfect!)
 
-sessionSecret: ${W_SESSION_SECRET:-1234567890abcdefghijklmnopqrstuvxyz}
+sessionSecret: ${W_SESSION_SECRET}
 
 # ---------------------------------------------------------------------
 # Database Connection String
 # ---------------------------------------------------------------------
 
-db: ${W_DB_CONNECTION_STRING:-mongodb://localhost:27017/wiki}
+db: ${W_DB_CONNECTION_STRING}
 
 # ---------------------------------------------------------------------
 # Git Connection Info
 # ---------------------------------------------------------------------
 
-git: ${W_GIT_ENABLE:-false}
+git: ${W_GIT_ENABLE}
   # url: ${W_GH_URL:-https://github.com/Organization/Repo}
   # branch: ${W_GH_BRANCH:-master}
   # auth:
@@ -145,13 +145,13 @@ git: ${W_GIT_ENABLE:-false}
   #   # Only for SSH authentication:
   #   privateKey: ${W_GH_PRIVATE_KEY_PATH:-/etc/wiki/keys/git.pem}
 
-  #   sslVerify: ${W_GH_SSL_VERIFY:-true}
+  #   sslVerify: ${W_GH_SSL_VERIFY}
 
   # # Default email to use as commit author
   # serverEmail: ${W_GH_SERVER_EMAIL:-marty@example.com}
 
   # # Whether to use user email as author in commits
-  # showUserEmail: ${W_GH_SHOW_USER_EMAIL:-true}
+  # showUserEmail: ${W_GH_SHOW_USER_EMAIL}
 
 # ---------------------------------------------------------------------
 # Features
@@ -159,31 +159,31 @@ git: ${W_GIT_ENABLE:-false}
 # You can enable / disable specific features below
 
 features:
-  linebreaks: ${W_FT_LINE_BREAKS:-true}
-  mathjax: ${W_FT_MATHJAX:-true}
+  linebreaks: ${W_FT_LINE_BREAKS}
+  mathjax: ${W_FT_MATHJAX}
 
 # ---------------------------------------------------------------------
 # External Logging
 # ---------------------------------------------------------------------
 
 externalLogging:
-  bugsnag: ${W_EL_BUGSNAG_ENABLE:-false}
-  loggly: ${W_EL_LOGGLY_ENABLE:-false}
-  papertrail: ${W_EL_PAPERTRAIL_ENABLE:-false}
-  rollbar: ${W_EL_ROLLBAR_ENABLE:-false}
-  sentry: ${W_EL_SENTRY_ENABLE:-false}
+  bugsnag: ${W_EL_BUGSNAG_ENABLE}
+  loggly: ${W_EL_LOGGLY_ENABLE}
+  papertrail: ${W_EL_PAPERTRAIL_ENABLE}
+  rollbar: ${W_EL_ROLLBAR_ENABLE}
+  sentry: ${W_EL_SENTRY_ENABLE}
 
 # ---------------------------------------------------------------------
 # Color Theme
 # ---------------------------------------------------------------------
 
 theme:
-  primary: ${W_THEME_PRIMARY:-indigo}
-  alt: ${W_THEME_ALT:-blue-grey}
-  viewSource: ${W_THEME_VIEWSOURCE:-all}
-  footer: ${W_THEME_FOOTER:-blue-grey}
+  primary: ${W_THEME_PRIMARY}
+  alt: ${W_THEME_ALT}
+  viewSource: ${W_THEME_VIEWSOURCE}
+  footer: ${W_THEME_FOOTER}
   code:
-    dark: ${W_THEME_CODE_ENABLE:-true}
-    colorize: ${W_THEME_COLORIZE_ENABLE:-true}
+    dark: ${W_THEME_CODE_ENABLE}
+    colorize: ${W_THEME_COLORIZE_ENABLE}
 
 #
