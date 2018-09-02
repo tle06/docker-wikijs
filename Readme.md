@@ -43,6 +43,7 @@ All environment variable are base on the config file available [here](https://gi
 
 ## Mandatory ENV variable
 WIKI_ADMIN_EMAIL=admin@example.com
+W_DB_CONNECTION_STRING=mongodb://localhost:27017/wiki 
 
 ## Rancher ENV variable
 
