@@ -1,5 +1,3 @@
-Still in dev mod
-
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/tle06/docker-wikijs/blob/master/LICENSE) [![Docker HUB](https://img.shields.io/docker/pulls/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/) [![MicroBadger Layers](https://img.shields.io/microbadger/layers/tlnk/docker-wikijs.svg?style=flat-square)](https://microbadger.com/images/tlnk/docker-wikijs) [![MicroBadger Image Size](https://img.shields.io/microbadger/image-size/tlnk/docker-wikijs.svg?style=flat-square)](https://microbadger.com/images/tlnk/docker-wikijs) [![Docker Build Status](https://img.shields.io/docker/build/tlnk/docker-wikijs.svg?style=flat-square)](https://hub.docker.com/r/tlnk/docker-wikijs/builds/)
 
 
